@@ -12,6 +12,8 @@ As an example here, we have the file `domain.jsonl` with 500 text items to fine-
 <img align="right" src="icons/hf.png" width="60" hspace="10"> 
 <img align="right" src="icons/unsloth.png" width="150" hspace="10">
 
+<br>
+
 <hr>
 **NOTE**<br>
 This whole thing must be run on GPU. Either on a local machine with Nvidia/Cuda properly installed, on Google Colab with a free GPU runtime (even though they quickly run out), or any other cloud machine where the `!nvcc --version` cell below checks out ✅. Options include `brev.dev` and `vast.ai`.
