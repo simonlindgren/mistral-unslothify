@@ -1,8 +1,13 @@
-This method uses the open-source version of [Unsloth](https://unsloth.ai/), which democratises access to fine-tuning pre-trained LLMs through the method of LoRA ([Low-Rank Adaptation](https://arxiv.org/abs/2106.09685)).
+## mistral-unslothify
 
+Use 🤗huggingface and Unsloth to finetune a Mistral pre-trained model on domain data.
 
-1. For access to GPU resources, this tutorial uses [`brev.dev`](https://brev.dev) . Login ☁️ there (Github login works) and use the 'Instances' tab to launch an instance. [Container mode; Brev Default; Choose your Compute resource; Note 💰 pricing (a few dollars per hour); Name instance --> Deploy].
-2. Wait ☕️ until the compute instance's status is 'Running' and the container's status is 'Built'.  
-3. Click  'Open Notebook' to enter into the JupyterLab environment.
-4. Clone this present repo into your `brev` session: `git clone XXXXXX` and `cd` into that directory.
+The aim here is to fine-tune the Mistral pre-trained model based on a set of text items that will attune it to perform more effectively on a specific domain. This means that we will be adapting the general capabilities of the model to better suit the needs and nuances of a particular field or area of expertise.
 
+Maybe surprisingly, in spite of a model such as for example Mistral 7B having seven billion parameters, the number of domain examples needed to fine-tune it can often be relatively small (see, for example, the widely cited paper on LLMs being ['few-shot learners'](https://arxiv.org/abs/2005.14165)). This is because large models like Mistral have a robust foundation of general language understanding, and the fine-tuning acts more like a focused nudge refining what the model already knows, rather than starting from scratch.
+
+As an example here, we have the file `domain.jsonl` with 500 text items to fine-tune the model for. All examples are about burgers 🍔🍔🍔, so the model will become specifically tailored to text-based tasks around burgers.
+
+<img align="right" src="icons/mistral.png" width="60" hspace="10"> 
+<img align="right" src="icons/hf.png" width="60" hspace="10"> 
+<img align="right" src="icons/unsloth.png" width="150" hspace="10">
