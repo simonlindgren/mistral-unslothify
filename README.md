@@ -15,7 +15,7 @@ Maybe surprisingly, in spite of a model such as for example Mistral 7B having se
 As an example here, we have the file `domain.jsonl` with 500 text items to fine-tune the model for. All examples are about Swedish meatballs, so the model will become better at carrying out text-based tasks around those.
 
 #### NOTE
-This whole thing must be run on GPU. Either on a local machine with Nvidia/Cuda properly installed, on Google Colab with a free GPU runtime (even though they quickly run out), or any other cloud machine where the `!nvcc --version` cell below checks out ✅. Options include `brev.dev` and `vast.ai`.
+This whole thing must be run on GPU. Either on a local machine with Nvidia/Cuda properly installed, on Google Colab with a free GPU runtime (even though they quickly run out), or any other cloud machine where the `!nvcc --version` cell in the notebook checks out ✅.
 
 
 
