@@ -9,13 +9,17 @@ Use 🤗huggingface and Unsloth to finetune a Mistral pre-trained model on domai
 
 The aim here is to fine-tune the Mistral pre-trained model based on a set of text items that will attune it to perform more effectively on a specific domain. Due to the way that fine-tuning works, the model will not 'memorize' these text items as 'facts', but the model weights will be updated so that it can better generate responses that are aligned with the specific language patterns, terminology, and nuances of the domain. A fine-tuned LLM improves not only in generating text in the fine-tuned style but also in recognizing and discerning nuances of that style. 
 
-
 Maybe surprisingly, in spite of a model such as for example Mistral 7B having seven billion parameters, the number of domain examples needed to fine-tune it can often be relatively small (see, for example, the widely cited paper on LLMs being ['few-shot learners'](https://arxiv.org/abs/2005.14165)). This is because large models like Mistral have a robust foundation of general language understanding, and the fine-tuning acts more like a focused nudge refining what the model already knows, rather than starting from scratch.
 
 As an example here, we have the file `domain.jsonl` with 500 text items to fine-tune the model for. All examples are about Swedish meatballs, so the model will become better at carrying out text-based tasks around those.
 
-#### NOTE
+#### GPU NEEDED ::zap::
 This whole thing must be run on GPU. Either on a local machine with Nvidia/Cuda properly installed, on Google Colab with a free GPU runtime (even though they quickly run out), or any other cloud machine where the `!nvcc --version` cell in the notebook checks out ✅.
+
+
+We want the training loss to decrease. A loss value around 2-3 is reasonable, if it gets close to 1.0 or drops below, the predictions will be highly confident, but also with some risk of overfitting, meaning that the model has learned the training data too well and may not perform as effectively on unseen data.
+
+
 
 
 
