@@ -13,17 +13,13 @@ Maybe surprisingly, in spite of a model such as for example Mistral 7B having se
 
 As an example here, we have the file `domain.jsonl` with 500 text items to fine-tune the model for. All examples are about Swedish meatballs, so the model will become better at carrying out text-based tasks around those.
 
-#### GPU NEEDED ::zap::
+#### GPU NEEDED ⚡
 This whole thing must be run on GPU. Either on a local machine with Nvidia/Cuda properly installed, on Google Colab with a free GPU runtime (even though they quickly run out), or any other cloud machine where the `!nvcc --version` cell in the notebook checks out ✅.
 
-
+#### GOALS ⭐
 We want the training loss to decrease. A loss value around 2-3 is reasonable, if it gets close to 1.0 or drops below, the predictions will be highly confident, but also with some risk of overfitting, meaning that the model has learned the training data too well and may not perform as effectively on unseen data.
 
-
-
-
-
-#### Parameters to adjust to counteract overfitting
+**Parameters to adjust to counteract overfitting**
 
 - `learning_rate` -- a commonly used rate could be around `0.0002` but the higher the rate the quicker the model may overfit. Lower late learns in a more stable way.
 - `weight_decay` -- experiment with the value, for example around `0.1` to `0.5`, to penalise large weights to reduce overfitting.
