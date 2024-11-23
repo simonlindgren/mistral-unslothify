@@ -12,12 +12,7 @@ The aim here is to fine-tune the Mistral pre-trained model based on a set of tex
 
 Maybe surprisingly, in spite of a model such as for example Mistral 7B having seven billion parameters, the number of domain examples needed to fine-tune it can often be relatively small (see, for example, the widely cited paper on LLMs being ['few-shot learners'](https://arxiv.org/abs/2005.14165)). This is because large models like Mistral have a robust foundation of general language understanding, and the fine-tuning acts more like a focused nudge refining what the model already knows, rather than starting from scratch.
 
-As an example here, we have the file `domain.jsonl` with 500 text items to fine-tune the model for. All examples are about Swedish meatballs, so the model will become specifically tailored to text-based tasks around those.
-
-
-
-
-
+As an example here, we have the file `domain.jsonl` with 500 text items to fine-tune the model for. All examples are about Swedish meatballs, so the model will become better at carrying out text-based tasks around those.
 
 #### NOTE
 This whole thing must be run on GPU. Either on a local machine with Nvidia/Cuda properly installed, on Google Colab with a free GPU runtime (even though they quickly run out), or any other cloud machine where the `!nvcc --version` cell below checks out ✅. Options include `brev.dev` and `vast.ai`.
